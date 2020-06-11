@@ -1,0 +1,48 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Blank
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Blank</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-grid id="container">
+    <ion-row>
+      <ion-col>
+        <ion-label>
+          Horário Inicial
+        </ion-label>
+        <ion-datetime 
+        [value]="horarioInicio.toISOString()"
+        picker-format="HH:mm"
+        display-format="HH:mm"
+        minute-values="0,10,20,30,40,50"
+        display-timezone="utc" 
+        (ionChange)="setDate($event,1)">
+
+        </ion-datetime>
+      </ion-col>
+      <ion-col>
+        <ion-label>
+          Horário Final
+        </ion-label>
+        <ion-datetime 
+        [value]="horarioTermino.toISOString()"
+        picker-format="HH:mm"
+        display-format="HH:mm"
+        minute-values="0,10,20,30,40,50"
+        display-timezone="utc" 
+        (ionChange)="setDate($event,2)">
+
+        </ion-datetime>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
